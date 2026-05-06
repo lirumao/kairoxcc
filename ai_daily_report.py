@@ -18,11 +18,13 @@ from urllib.parse import urljoin, urlparse
 try:
     import requests
     from bs4 import BeautifulSoup
+    import lxml
 except ImportError:
     print("Installing required packages...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "requests", "beautifulsoup4", "-q"])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "requests", "beautifulsoup4", "lxml", "certifi", "-q"])
     import requests
     from bs4 import BeautifulSoup
+    import lxml
 
 
 # ============== Configuration ==============
@@ -533,6 +535,17 @@ def push_via_git(file_path, repo_url, branch="main"):
         subprocess.run(["git", "config", "user.email", "ai-reporter@example.com"], check=True, capture_output=True)
         subprocess.run(["git", "config", "user.name", "AI Reporter"], check=True, capture_output=True)
         
+        # Check current branch and create if needed
+        result = subprocess.run(["git", "branch", "--show-current"], capture_output=True, text=True)
+        current_branch = result.stdout.strip()
+        
+        if not current_branch:
+            # No branch yet, create one
+            subprocess.run(["git", "checkout", "-b", branch], check=True, capture_output=True)
+        elif current_branch != branch:
+            # Switch to target branch
+            subprocess.run(["git", "checkout", branch], check=False, capture_output=True)
+        
         # Add and commit
         subprocess.run(["git", "add", file_path], check=True, capture_output=True)
         
@@ -548,8 +561,8 @@ def push_via_git(file_path, repo_url, branch="main"):
             capture_output=True
         )
         
-        # Push
-        subprocess.run(["git", "push", "origin", branch], check=True, capture_output=True)
+        # Push with force to handle empty repo cases
+        subprocess.run(["git", "push", "-u", "origin", branch, "--force"], check=True, capture_output=True)
         
         print(f"Successfully pushed {file_path} to GitHub via git")
         return True
