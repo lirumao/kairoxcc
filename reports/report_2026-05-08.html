@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Daily Report - 2026年05月08日</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            margin-bottom: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        header .date {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-card .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .source-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .source-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .source-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .source-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .article-list {
+            list-style: none;
+        }
+        
+        .article-item {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+        
+        .article-item:hover {
+            background: #f1f5f9;
+            border-color: var(--border);
+        }
+        
+        .article-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        .article-title:hover {
+            text-decoration: underline;
+        }
+        
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-summary {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #dbeafe;
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Daily Report</h1>
+            <div class="date">2026年05月08日</div>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="number">3</div>
+                <div class="label">Sources</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">14</div>
+                <div class="label">Articles</div>
+            </div>
+        </div>
+
+        <section class="source-section">
+            <div class="source-header">
+                <div class="source-icon">A</div>
+                <h2 class="source-title">Anthropic</h2>
+            </div>
+            <ul class="article-list">
+
+                <li class="article-item">
+                    <a href="https://www.anthropic.com/news/claude-opus-4-7" class="article-title" target="_blank" rel="noopener">Introducing Claude Opus 4.7ProductApr 16, 2026Our latest Opus model brings stronger performance across coding, agents, vision, and multi-step tasks, with greater thoroughness and consistency on the work that matters most.</a>
+                    
+                    
+                </li>
+
+                <li class="article-item">
+                    <a href="https://www.anthropic.com/news/claude-design-anthropic-labs" class="article-title" target="_blank" rel="noopener">ProductApr 17, 2026Introducing Claude Design by Anthropic LabsToday, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.</a>
+                    
+                    
+                </li>
+
+                <li class="article-item">
+                    <a href="https://www.anthropic.com/news/claude-is-a-space-to-think" class="article-title" target="_blank" rel="noopener">AnnouncementsFeb 4, 2026Claude is a space to thinkWe’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.</a>
+                    
+                    
+                </li>
+
+                <li class="article-item">
+                    <a href="https://www.anthropic.com/news/higher-limits-spacex" class="article-title" target="_blank" rel="noopener">May 6, 2026AnnouncementsHigher usage limits for Claude and a compute deal with SpaceX</a>
+                    
+                    
+                </li>
+
+            </ul>
+        </section>
+
+        <section class="source-section">
+            <div class="source-header">
+                <div class="source-icon">O</div>
+                <h2 class="source-title">OpenAI</h2>
+            </div>
+            <ul class="article-list">
+
+                <li class="article-item">
+                    <a href="https://openai.com/index/running-codex-safely" class="article-title" target="_blank" rel="noopener">Running Codex safely at OpenAI</a>
+                    <div class="article-meta">Fri, 08 May 2026 12:30:00 GMT</div>
+                    <div class="article-summary">How OpenAI runs Codex securely with sandboxing, approvals, network policies, and agent-native telemetry to support safe and compliant coding agent adoption.</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber" class="article-title" target="_blank" rel="noopener">Scaling Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber</a>
+                    <div class="article-meta">Thu, 07 May 2026 13:00:00 GMT</div>
+                    <div class="article-summary">OpenAI expands Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber, helping verified defenders accelerate vulnerability research and protect critical infrastructure.</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://openai.com/index/parloa" class="article-title" target="_blank" rel="noopener">Parloa builds service agents customers want to talk to</a>
+                    <div class="article-meta">Thu, 07 May 2026 11:00:00 GMT</div>
+                    <div class="article-summary">Parloa leverages OpenAI models to power scalable, voice-driven AI customer service agents, enabling enterprises to design, simulate, and deploy reliable, real-time interactions.</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api" class="article-title" target="_blank" rel="noopener">Advancing voice intelligence with new models in the API</a>
+                    <div class="article-meta">Thu, 07 May 2026 10:00:00 GMT</div>
+                    <div class="article-summary">Explore new realtime voice models in the OpenAI API that can reason, translate, and transcribe speech, enabling more natural and intelligent voice experiences.</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://openai.com/index/testing-ads-in-chatgpt" class="article-title" target="_blank" rel="noopener">Testing ads in ChatGPT</a>
+                    <div class="article-meta">Thu, 07 May 2026 00:00:00 GMT</div>
+                    <div class="article-summary">OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control.</div>
+                </li>
+
+            </ul>
+        </section>
+
+        <section class="source-section">
+            <div class="source-header">
+                <div class="source-icon">M</div>
+                <h2 class="source-title">Microsoft Research</h2>
+            </div>
+            <ul class="article-list">
+
+                <li class="article-item">
+                    <a href="https://www.microsoft.com/en-us/research/blog/building-realistic-electric-transmission-grid-dataset-at-scale-a-pipeline-from-open-dataset/" class="article-title" target="_blank" rel="noopener">Building realistic electric transmission grid dataset at scale: a pipeline from open dataset</a>
+                    <div class="article-meta">Fri, 08 May 2026 19:53:56 +0000</div>
+                    <div class="article-summary"><p>Microsoft Research is excited to release an open dataset of approximate transmission topology of the U.S. power grid derived from publicly available data. The ability to study transmission-level power grid behavior is essential for modern power systems research. Analyses of congestion, transmissi...</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://www.microsoft.com/en-us/research/blog/microsoft-at-nsdi-2026-advances-in-large-scale-networked-systems/" class="article-title" target="_blank" rel="noopener">Microsoft at NSDI 2026: Advances in large-scale networked systems</a>
+                    <div class="article-meta">Tue, 05 May 2026 16:00:00 +0000</div>
+                    <div class="article-summary"><p>Microsoft researchers share advances in building and operating large-scale distributed systems, spanning datacenters, networking, and the growing intersection with AI during  NSDI ’26.</p>
+<p>The post <a href="https://www.microsoft.com/en-us/research/blog/microsoft-at-nsdi-2026-advances-in-large-...</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://www.microsoft.com/en-us/research/blog/red-teaming-a-network-of-agents-understanding-what-breaks-when-ai-agents-interact-at-scale/" class="article-title" target="_blank" rel="noopener">Red-teaming a network of agents: Understanding what breaks when AI agents interact at scale</a>
+                    <div class="article-meta">Thu, 30 Apr 2026 21:53:21 +0000</div>
+                    <div class="article-summary"><p>Safe agents don’t guarantee a safe ecosystem of interconnected agents. Microsoft Research examines what breaks when AI agents interact and why network-level risks require new approaches.</p>
+<p>The post <a href="https://www.microsoft.com/en-us/research/blog/red-teaming-a-network-of-agents-underst...</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://www.microsoft.com/en-us/research/blog/autoadapt-automated-domain-adaptation-for-large-language-models/" class="article-title" target="_blank" rel="noopener">AutoAdapt: Automated domain adaptation for large language models</a>
+                    <div class="article-meta">Wed, 22 Apr 2026 16:25:30 +0000</div>
+                    <div class="article-summary"><p>Deploying large language models (LLMs) in real-world, high-stakes settings is harder than it should be. In high-stakes settings like law, medicine, and cloud incident response, performance and reliability can quickly break down because adapting models to domain-specific requirements is a slow and...</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://www.microsoft.com/en-us/research/podcast/can-we-ai-our-way-to-a-more-sustainable-world/" class="article-title" target="_blank" rel="noopener">Can we AI our way to a more sustainable world?</a>
+                    <div class="article-meta">Mon, 20 Apr 2026 16:24:01 +0000</div>
+                    <div class="article-summary"><p>Doug Burger, sustainability expert Amy Luers, and optimization researcher Ishai Menache examine the global emissions implications of datacenter operations, efficiency gains, and AI's potential across electrification, materials, and food systems.</p>
+<p>The post <a href="https://www.microsoft.com/...</div>
+                </li>
+
+            </ul>
+        </section>
+
+        <footer>
+            <p>Generated on 2026-05-08 22:01:57 | AI Daily Report</p>
+        </footer>
+    </div>
+</body>
+</html>
